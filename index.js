@@ -1,12 +1,14 @@
 const _ = require("lodash");
 const jsonfile = require('jsonfile')
-const file = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Regions.json"
+const _Regionfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Regions.json"
+const _Wardsfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Wards.json"
+const _Districtfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Districts.json"
 
 
 
 
 exports.regions = function () {
-jsonfile.readFile(file,(err,obj)=>{
+jsonfile.readFile(_Regionfile,(err,obj)=>{
 let Regions = [];
   if(err){
       console.error(err);
@@ -21,18 +23,52 @@ Regions.push( regionObject['properties']['region'])
 }
 
 
-exports.district = function (regionName) {
-    jsonfile.readFile(file,(err,obj)=>{
-    let Regions = [];
+exports.alldistrict = function (regionName) {
+    jsonfile.readFile(_Districtfile,(err,obj)=>{
+    let Districts = [];
       if(err){
           console.error(err);
-      }
-    
+      }     
+     
       _.forEach(obj['features'],(regionObject) =>{
-    Regions.push( regionObject['properties']['region'])  
+        Districts.push( regionObject['properties']['District'])  
       }) 
-     console.dir(Regions);
     
     });
     
     }
+
+
+
+    exports.districtsPerRegion = function (regionName) {
+      jsonfile.readFile(_Districtfile,(err,obj)=>{
+      let DistrictsPerRegion = [];
+        if(err){
+            console.error(err);
+        } 
+        _.forEach(obj['features'],(regionObject) =>{
+                   if(regionObject['properties']['region'] == regionName){
+DistrictsPerRegion.push(regionObject['properties']['District']);
+          }
+        }) 
+       console.log(DistrictsPerRegion);
+      
+      });
+      
+      }
+
+
+      exports.allWards = function () {
+        jsonfile.readFile(_Wardsfile,(err,obj)=>{
+        let wards = [];
+          if(err){
+              console.error(err);
+          } 
+          _.forEach(obj['features'],(districtObject) =>{               
+
+                wards.push( districtObject['properties']['Ward']);  
+          }) 
+          console.log(wards)
+        });
+        
+        }
