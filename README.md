@@ -305,7 +305,7 @@ const tanzaniageodata = require('tanzaniageodata');
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) 
 
-Were open for new ideas ,improvements and innovations  🚀.
+We are open for new ideas ,improvements and innovations  🚀.
 #### pull request are welcome
 
 
