@@ -23,7 +23,7 @@ Regions.push( regionObject['properties']['region'])
 }
 
 
-exports.alldistrict = function (regionName) {
+exports.alldistrict = function () {
     jsonfile.readFile(_Districtfile,(err,obj)=>{
     let Districts = [];
       if(err){
@@ -33,7 +33,7 @@ exports.alldistrict = function (regionName) {
       _.forEach(obj['features'],(regionObject) =>{
         Districts.push( regionObject['properties']['District'])  
       }) 
-    
+      console.log(Districts);
     });
     
     }
