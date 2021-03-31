@@ -1,8 +1,8 @@
 const _ = require("lodash");
 const jsonfile = require('jsonfile')
-const _Regionfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Regions.json"
-const _Wardsfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Wards.json"
-const _Districtfile = "/home/danford/PROJECTS/package/TanzaniaGeoData/Countries/Tanzania/Districts.json"
+const _Regionfile = "./Countries/Tanzania/Regions.json"
+const _Wardsfile = "./Countries/Tanzania/Wards.json"
+const _Districtfile = "./Countries/Tanzania/Districts.json"
 
 
 
