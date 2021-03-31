@@ -1,5 +1,5 @@
 # tanzaniageodata 🚀
-Get access to regions ,district and wards of Tanzania Country in simple way 🚀🚀
+Get access to regions, districts and wards of Tanzania Country in simple way 🚀🚀
 
 [![NPM](https://nodei.co/npm/tanzaniageodata.png)](https://npmjs.org/package/tanzaniageodata)                  
  ![npm bundle size](https://img.shields.io/bundlephobia/min/tanzaniageodata?style=for-the-badge)
@@ -293,7 +293,7 @@ const tanzaniageodata = require("tanzaniageodata");
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) 
 
-We are open for new ideas ,improvements and innovations  🚀.
+We are open for new ideas, improvements and innovations  🚀.
 #### pull request are welcome
 
 
