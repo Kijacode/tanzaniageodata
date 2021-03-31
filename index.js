@@ -7,7 +7,6 @@ const _Districtfile = path.join(__dirname, "Countries/Tanzania/Districts.json");
 
 exports.regions = function () {
   jsonfile.readFile(_Regionfile, (err, obj) => {
-    console.log(obj)
     let Regions = [];
     if (err) {
       console.error(err);
