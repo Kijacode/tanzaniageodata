@@ -1,8 +1,9 @@
+const path = require('path');
 const _ = require("lodash");
 const jsonfile = require("jsonfile");
-const _Regionfile = "./Countries/Tanzania/Regions.json";
-const _Wardsfile = "./Countries/Tanzania/Wards.json";
-const _Districtfile = "./Countries/Tanzania/Districts.json";
+const _Regionfile = path.join(__dirname, "Countries/Tanzania/Regions.json");
+const _Wardsfile = path.join(__dirname, "Countries/Tanzania/Wards.json");
+const _Districtfile = path.join(__dirname, "Countries/Tanzania/Districts.json");
 
 exports.regions = function () {
   jsonfile.readFile(_Regionfile, (err, obj) => {
