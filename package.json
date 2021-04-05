@@ -1,6 +1,6 @@
 {
   "name": "tanzaniageodata",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "keywords": [
     "Tanzania",
@@ -15,13 +15,20 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node postinstall.js",
+    "install": "node postinstall.js"
   },
   "author": "Kijacode",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kijacode/tanzaniageodata.git"
+  },
   "dependencies": {
     "jsonfile": "^6.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "print-message": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
