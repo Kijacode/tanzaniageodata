@@ -8,60 +8,55 @@ const _Districtfile = path.join(__dirname, "Countries/Tanzania/Districts.json");
 
 
 exports.regions = function () {
-  jsonfile.readFile(_Regionfile,  (err, obj) => {
+  try {
+    const data = jsonfile.readFileSync(_Regionfile)
     let Regions = [];
-    if (err) {
-      console.error(err);
-    }
-    _.forEach(obj["features"], (regionObject) => {
-      Regions.push(regionObject["properties"]["region"]);
-    });
-    
-   console.dir(Regions);
-    
-   
-  })},
+    _.forEach(data["features"], (regionObject) => {
+          Regions.push(regionObject["properties"]["region"]);
+        });
+    return Regions
+  } catch(err) {
+    console.error(err);
+  }
+},
 
 exports.alldistrict = function () {
-  jsonfile.readFile(_Districtfile, (err, obj) => {
+  try {
+    const data = jsonfile.readFileSync(_Districtfile);
     let Districts = [];
-    if (err) {
-      console.error(err);
-    }
-
-    _.forEach(obj["features"], (regionObject) => {
+    _.forEach(data["features"], (regionObject) => {
       Districts.push(regionObject["properties"]["District"]);
     });
-   console.dir(Districts);
-  });
+    return Districts
+  } catch(err) {
+    console.error(err);
+  }
 };
 
 exports.districtsPerRegion = function (regionName) {
-  jsonfile.readFile(_Districtfile, (err, obj) => {
+  try {
+    const data = jsonfile.readFileSync(_Districtfile);
     let DistrictsPerRegion = [];
-    if (err) {
-      console.error(err);
-    }
-    _.forEach(obj["features"], (regionObject) => {
+    _.forEach(data["features"], (regionObject) => {
       if (regionObject["properties"]["region"] == regionName) {
         DistrictsPerRegion.push(regionObject["properties"]["District"]);
       }
     });
-    
-    console.dir(DistrictsPerRegion);
-  });
+    return DistrictsPerRegion
+  } catch(err) {
+    console.error(err);
+  }
 };
 
 exports.allWards = function () {
-  jsonfile.readFile(_Wardsfile, (err, obj) => {
-    let wards = [];
-    if (err) {
-      console.error(err);
-    }
-    _.forEach(obj["features"], (districtObject) => {
-      wards.push(districtObject["properties"]["Ward"]);
-    });
-
-    console.log(wards);
+  try {
+    const data = jsonfile.readFileSync(_Wardsfile);
+  let wards = [];
+  _.forEach(data["features"], (districtObject) => {
+    wards.push(districtObject["properties"]["Ward"]);
   });
+  return wards
+  } catch(err) {
+    console.error(err);
+  }
 };
