@@ -3,7 +3,7 @@ const printMessage = require('print-message');
 
 printMessage([
     "Hello am Danford Kija David form Tanzania," +
-    "    am gradudating this year (2021) am looking for the great professional team to work with ,  Let build software together ,my contacts are github:@Kijacode, whatsapp:+255620419226, email:kijadanford@gmail.com ,linkedin: Danford Kija , twitter: @Kijacode"
+    "    Let build software together ,my contacts are github:@Kijacode, whatsapp:+255762434508, email:kijadanford@gmail.com ,linkedin: Danford Kija , twitter: @Kijacode"
 ],
 {
     border:true,
