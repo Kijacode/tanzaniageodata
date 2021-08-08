@@ -2,4 +2,4 @@ const reg  = require('../index');
 
 
 
-console.log(reg.regions());
+console.log(reg.wardsPerDistrict('bahi'));

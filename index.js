@@ -60,3 +60,18 @@ exports.allWards = function () {
     console.error(err);
   }
 };
+
+exports.wardsPerDistrict = function(district) {
+  try {
+    const data = jsonfile.readFileSync(_Wardsfile);
+    let wards = [];
+    _.forEach(data["features"], (districtObj) => {
+      if (districtObj.properties.District.toLowerCase().includes(district.toLowerCase())) {
+        wards.push(districtObj["properties"]["Ward"]);
+      }
+    });
+    return wards
+  } catch(err) {
+    console.log(err);
+  }
+}
